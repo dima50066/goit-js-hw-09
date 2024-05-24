@@ -35,7 +35,6 @@ const clearForm = () => {
   document.querySelector('.feedback-form').reset();
 };
 
-// Обробка події input з використанням делегування
 document
   .querySelector('.feedback-form')
   .addEventListener('input', updateFormData);
