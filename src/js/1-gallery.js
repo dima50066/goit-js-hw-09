@@ -68,7 +68,9 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 
-const galleryItems = images.map(image => {
+const fragment = document.createDocumentFragment();
+
+images.forEach(image => {
   const listItem = document.createElement('li');
   listItem.classList.add('gallery-item');
 
@@ -81,14 +83,16 @@ const galleryItems = images.map(image => {
   img.src = image.preview;
   img.alt = image.description;
   img.width = 360;
+
   link.appendChild(img);
   listItem.appendChild(link);
-  gallery.appendChild(listItem);
+  fragment.appendChild(listItem);
 });
+
+gallery.appendChild(fragment);
 
 document.addEventListener('DOMContentLoaded', () => {
   const lightbox = new SimpleLightbox('.gallery a', {
-    captions: true,
     captionsData: 'alt',
     captionPosition: 'bottom',
     captionDelay: 250,
