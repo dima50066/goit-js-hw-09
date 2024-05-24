@@ -91,10 +91,8 @@ images.forEach(image => {
 
 gallery.appendChild(fragment);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionPosition: 'bottom',
-    captionDelay: 250,
-  });
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
 });
